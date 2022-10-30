@@ -1,0 +1,6 @@
+Pages/HomePage.class
+StepDefinitions/InitializationHooks.class
+Pages/CommonPage.class
+StepDefinitions/DailMailGUITestSteps.class
+StepDefinitions/PetStoreAPITestSteps.class
+Runner/TestRunner.class
