@@ -3,8 +3,7 @@
 #Creation Date: 29 Oct 2022
 
 Feature: SDET Home GUI Test
-
-  Scenario Outline: Validate time stamp in home page
+  Scenario Outline: Automate test scenario for Daily Mail
     Given user navigates to daily mail home page
     When user verifies webpage for date and time
     Then it should match current date and time
@@ -18,8 +17,8 @@ Feature: SDET Home GUI Test
     When user click on the next and previous buttons, it navigates to appropriate gallery picture
     When user clicks on the Facebook share icon
     Then user verifies that Facebook modal dialog opens
-#    When user navigates and clicks on the full screen button of a video embedded within the article
-#    Then user should be able to view the video in full screen and minimized mode
+    When user navigates and clicks on the full screen button of a video embedded within the article
+    Then user should be able to view the video in full screen and minimized mode
     When user navigates to bottom right of the article page to the Premier League table section
     And exhibit the points or positions from the Premier League table for the team <Team>
 

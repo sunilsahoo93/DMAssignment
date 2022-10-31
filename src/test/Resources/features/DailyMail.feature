@@ -3,8 +3,7 @@
 #Creation Date: 29 Oct 2022
 
 Feature: SDET Home GUI Test
-
-  Scenario Outline: Validate time stamp in home page
+  Scenario Outline: Automate test scenario for Daily Mail
     Given user navigates to daily mail home page
     When user verifies webpage for date and time
     Then it should match current date and time
