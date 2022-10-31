@@ -117,13 +117,15 @@ public class HomePage {
         String timeStamp = "";
         String formattedTimeStamp = "";
         timeStamp = txt_Date.getText() + ", " + txt_Time.getText();
-        formattedTimeStamp = timeStamp.split(",")[0] + ","+ timeStamp.split(",")[1].replace("st","").replace("rd","").replace("th","").replace("nd","") + ","+ timeStamp.split(",")[2];
+        formattedTimeStamp = timeStamp.split(",")[0] + "," + timeStamp.split(",")[1].replace("st", "").replace("rd", "").replace("th", "").replace("nd", "") + "," + timeStamp.split(",")[2];
         System.out.println("Time Stamp is {}:" + formattedTimeStamp);
         return formattedTimeStamp;
     }
 
     public void navigateToSportTab() {
         try {
+            Thread.sleep(2000);
+            new Actions(driver).moveToElement(tab_Sport).perform();
             tab_Sport.click();
             System.out.println("Navigated to Sport tab successfully");
         } catch (Exception e) {
@@ -139,9 +141,9 @@ public class HomePage {
         String colorFootball = lnk_Football.getCssValue("background-color");
         String colorFootballHex = Color.fromString(colorFootball).asHex();
         System.out.println("Hex code for background color for Secondary Navigation tab(Football): " + colorFootballHex);
-        if(colorFootballHex.equals(colorSportHex)){
+        if (colorFootballHex.equals(colorSportHex)) {
             System.out.println("Primary and Secondary Navigation colors are same");
-        }else{
+        } else {
             System.out.println("Primary and Secondary Navigation colors are different!!!");
             //Assert.fail(); //This is failing. Currently commented out to get the flow completed
         }
@@ -267,6 +269,7 @@ public class HomePage {
                 navigateToVideoTab();
             }
             btn_VideoFullScreen.get(0).click();
+            Thread.sleep(2000);
             System.out.println("Full screen button on video clicked successfully");
         } catch (Exception e) {
             e.printStackTrace();
@@ -292,10 +295,9 @@ public class HomePage {
 
     public void navigateToPremierLeagueTab() {
         try {
-            if(!tab_Sport.isDisplayed()){
-                navigateToSportTab();
-            }
-            Thread.sleep(2000);
+            Thread.sleep(3000);
+            navigateToSportTab();
+            Thread.sleep(3000);
             lnk_PremierLeague.click();
             System.out.println("Premier link clicked successfully");
         } catch (Exception e) {
